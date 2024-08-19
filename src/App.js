@@ -1,24 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Sidebar, { SidebarProvider } from "./components/sidebar/Sidebar";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./components/sidebar/header";
+import Dashboard from "./components/dashboard/dashboard";
+import CaptionStream from "./components/captionStream/topicView/topicView";
+import Learn from "./components/captionStream/learn/learn";
+import { CaptionContext } from "./components/captionStream/learn/caption";
 
 function App() {
+  const [activeMenu, setActiveMenu] = React.useState("");
+  const [activeSubject, setActiveSubject] = React.useState(null);
+  const [header, setHeader] = React.useState("Visual Voice");
+  const [currentCaption, setCurrentCaption] = React.useState("");
+  const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => {
+    const activeSubject = localStorage.getItem("activeSubject");
+    if (activeSubject) {
+      setActiveSubject(JSON.parse(activeSubject));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!activeSubject) return;
+    localStorage.setItem("activeSubject", JSON.stringify(activeSubject));
+  }, [activeSubject]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <HashRouter>
+      <SidebarProvider
+        value={{
+          active: activeMenu,
+          setActive: setActiveMenu,
+          activeSubject: activeSubject,
+          setActiveSubject: setActiveSubject,
+          header: header,
+          setHeader: setHeader,
+        }}
+      >
+        <CaptionContext.Provider
+          value={{
+            currentCaption,
+            setCurrentCaption,
+            currentTime,
+            setCurrentTime,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div className="App">
+            <Header />
+            <Routes>
+              <Route path="/Caption Stream" Component={CaptionStream} />
+
+              <Route path="/Caption Stream/:videoId" Component={Learn} />
+
+              <Route path="/" Component={Dashboard} />
+            </Routes>
+          </div>
+        </CaptionContext.Provider>
+      </SidebarProvider>
+    </HashRouter>
   );
 }
 
