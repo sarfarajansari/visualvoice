@@ -1,70 +1,61 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Visual Voice 🗣️🎥
 
-## Available Scripts
+**Visual Voice** is an inclusive platform specifically designed for **deaf and hard-of-hearing individuals**. The platform allows users to upload videos without transcripts, automatically generating accurate transcripts for the video. During playback, users can view large, clear subtitles and interactive, colorful sticky notes that highlight key topics discussed in the video. 
 
-In the project directory, you can run:
+Visual Voice aims to bridge communication gaps and provide a more accessible, interactive learning and entertainment experience.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://github.com/user-attachments/assets/e49b639a-b48a-4d04-b3c7-dcfd4c17479a
+## Features
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. **Automatic Transcript Generation**
+   - Upload any video, and Visual Voice will generate an accurate transcript for the content.
+   - The transcription is displayed clearly below the video as **large, easy-to-read subtitles**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. **Interactive Notes and Sticky Notes**
+   - While the video plays, **sticky notes** appear on the right side of the video.
+   - The top note always highlights the **current topic** being discussed, providing a quick overview of the content.
+   - Notes are designed in a **colorful sticky note format** to make them visually engaging and easy to follow.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How It Works
 
-### `npm run eject`
+1. **Upload a Video**: Upload a video without any transcripts.
+2. **Automatic Transcript**: The platform will automatically generate a transcript of the video.
+3. **Video Playback**: While the video plays:
+   - **Clear Subtitles**: The transcript will be displayed below the video in large, readable fonts.
+   - **Sticky Notes**: Interactive sticky notes will appear on the right side, showing the current topic and relevant key points in a colorful format.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/sarfarajansari/visualvoice.git
+   cd visual-voice
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install Dependencies**
+   - Make sure you have **Node.js** and **npm** installed.
+   - Run the following command to install all required dependencies:
+     ```bash
+     npm install
+     ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Run the Application**
+   ```bash
+   npm start
+   ```
+   - The platform will be available at `http://localhost:3000`.
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Frontend**: React, CSS, JavaScript
+- **Backend**: FastAPI
+- **Speech-to-Text API**: transformers, pytorch
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
